@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>把 AI 训练成 BOSS 投递搭子｜找实习 SOP</title>
+<meta name="description" content="一份把 BOSS 直聘投递做成流程的实操记录：筛岗、打招呼、回复后定制一张简历、跟进复盘。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231B2B2A'/%3E%3Cpath d='M11 10h10M11 16h10M11 22h6' stroke='%23E8DCC8' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#1B2B2A;
+    --ink-2:#4A5A57;
+    --paper:#F2EEE5;
+    --paper-2:#E8E1D4;
+    --card:#FBF8F1;
+    --line:#D3C9B8;
+    --accent:#B4552D;
+    --accent-2:#D9A441;
+    --green:#294B43;
+    --white:#FFFDF8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",system-ui,sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .serif{font-family:"Songti SC","Noto Serif SC","STSong",serif}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+
+  /* ---------- opening ---------- */
+  .opening{padding:54px 0 38px}
+  .topline{display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid var(--line);padding-bottom:14px;font-size:12px;letter-spacing:.16em;color:var(--ink-2)}
+  .topline .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:8px}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:end;padding-top:38px}
+  .eyebrow{font-size:12px;letter-spacing:.18em;color:var(--accent);margin-bottom:14px}
+  h1{font-size:clamp(36px,6vw,72px);line-height:1.08;letter-spacing:-.02em;font-weight:700}
+  h1 span{display:block;color:var(--accent);font-style:italic;font-weight:400}
+  .lede{max-width:560px;margin-top:22px;font-size:16px;color:var(--ink-2)}
+  .hero-note{background:var(--card);border:1px solid var(--line);padding:22px 24px;position:relative}
+  .hero-note::before{content:"PLAY";position:absolute;top:-11px;left:18px;background:var(--accent);color:#fff;font-size:9px;letter-spacing:.18em;padding:3px 8px}
+  .hero-note .big{font-size:32px;font-weight:700;line-height:1.2;margin:6px 0 8px}
+  .hero-note p{font-size:13px;color:var(--ink-2)}
+
+  /* ---------- shot strip ---------- */
+  .shots{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:42px 0 18px}
+  .shot{padding:22px 18px 24px;border-right:1px solid var(--line);position:relative}
+  .shot:last-child{border-right:none}
+  .shot .tc{font-size:11px;letter-spacing:.12em;color:var(--accent);margin-bottom:12px}
+  .shot .t{font-size:17px;font-weight:700;line-height:1.35}
+  .shot .d{font-size:12.5px;color:var(--ink-2);margin-top:8px;line-height:1.6}
+  .shot::after{content:"";position:absolute;left:18px;bottom:12px;width:22px;height:1px;background:var(--accent)}
+  .shot:nth-child(even){background:rgba(255,255,255,.25)}
+
+  /* ---------- stats ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 54px}
+  .stat{background:var(--green);color:var(--white);padding:20px 20px 18px;min-height:118px;display:flex;flex-direction:column;justify-content:space-between}
+  .stat .num{font-size:32px;font-weight:700;line-height:1}
+  .stat .label{font-size:12px;color:#D9E2DA;letter-spacing:.02em}
+
+  /* ---------- principles ---------- */
+  section.block{padding:42px 0;border-top:1px solid var(--line)}
+  .block-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:28px}
+  .block-head h2{font-size:clamp(26px,3.5vw,38px);line-height:1.2;font-weight:700}
+  .block-head .no{font-size:12px;letter-spacing:.18em;color:var(--accent);white-space:nowrap}
+  .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .p-card{background:var(--card);border:1px solid var(--line);padding:26px 24px 24px;min-height:220px;display:flex;flex-direction:column}
+  .p-card .k{font-size:11px;letter-spacing:.14em;color:var(--accent);margin-bottom:22px}
+  .p-card h3{font-size:21px;line-height:1.35;margin-bottom:12px}
+  .p-card p{font-size:13.5px;color:var(--ink-2);margin-top:auto}
+  .p-card:nth-child(2){background:var(--paper-2)}
+
+  /* ---------- before/after ---------- */
+  .compare{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:var(--card)}
+  .compare > div{padding:28px 30px}
+  .compare > div + div{border-left:1px solid var(--line);background:#F7F1E6}
+  .compare .tag{font-size:11px;letter-spacing:.14em;color:var(--accent);margin-bottom:14px}
+  .compare h3{font-size:20px;margin-bottom:12px}
+  .compare ul{list-style:none;display:grid;gap:10px}
+  .compare li{font-size:13.8px;color:var(--ink-2);padding-left:18px;position:relative}
+  .compare li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:1px;background:var(--accent)}
+
+  /* ---------- cta ---------- */
+  .cta{padding:46px 0 64px;display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid var(--line)}
+  .cta h2{font-size:clamp(24px,3vw,34px);line-height:1.25}
+  .cta p{font-size:13px;color:var(--ink-2);margin-top:8px;max-width:520px}
+  .btn{display:inline-flex;align-items:center;gap:12px;background:var(--accent);color:#fff;text-decoration:none;padding:14px 22px;font-size:14px;white-space:nowrap;transition:transform .2s ease,background .2s ease}
+  .btn:hover{background:#963F1F;transform:translateY(-2px)}
+  .btn .arrow{font-size:18px;line-height:1}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-left:8px}
+  .btn.ghost:hover{background:var(--paper-2);transform:translateY(-2px)}
+
+  footer{border-top:1px solid var(--line);padding:20px 0 34px;font-size:12px;color:var(--ink-2);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:26px;align-items:start}
+    .shots{grid-template-columns:1fr 1fr;border-bottom:none}
+    .shot{border-bottom:1px solid var(--line)}
+    .stats{grid-template-columns:1fr 1fr}
+    .principles{grid-template-columns:1fr}
+    .compare{grid-template-columns:1fr}
+    .compare > div + div{border-left:none;border-top:1px solid var(--line)}
+    .cta{align-items:flex-start;flex-direction:column}
+    .btn{margin-left:0;margin-top:8px}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap opening">
+  <div class="topline">
+    <span><i class="dot"></i>训练记录 / BOSS 投递 SOP</span>
+    <span>2026.11.25 · PUBLIC EDITION</span>
+  </div>
+
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">不是海投，是把投递做成流程</div>
+      <h1 class="serif">把 AI 训练成<br>BOSS 投递<span>搭子。</span></h1>
+      <p class="lede">从筛岗、打招呼，到对方回复后只发一张定制简历，再到跟进复盘。这里记录的是我实际跑过、踩过坑、改过的流程，不是模板合集。</p>
+    </div>
+    <div class="hero-note">
+      <div class="big serif">1 条消息<br>1 张图<br>0 重复</div>
+      <p>打招呼只发文字；简历等对方要再发；同一个会话只发一张。少于这个，叫漏；多于这个，叫打扰。</p>
+    </div>
+  </div>
+
+  <div class="shots">
+    <div class="shot"><div class="tc">00:00 / 开机</div><div class="t">先定门槛</div><div class="d">本科及以上、线下日常实习、日薪 ≥120，优先 150+。</div></div>
+    <div class="shot"><div class="tc">00:30 / 筛岗</div><div class="t">只蹲活跃 HR</div><div class="d">今日活跃 / 3 日内活跃优先；旧帖、已读不回不碰。</div></div>
+    <div class="shot"><div class="tc">01:00 / 招呼</div><div class="t">三段文字</div><div class="d">岗位匹配 + 到岗安排 + 愿从基础做起。</div></div>
+    <div class="shot"><div class="tc">01:30 / 回复</div><div class="t">按 JD 改一张</div><div class="d">只改表达，不新增没做过的项目。</div></div>
+    <div class="shot"><div class="tc">02:00 / 复盘</div><div class="t">回写状态</div><div class="d">已投、已回、已排除都留档，不重复核对。</div></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="num">10</div><div class="label">每天分析 10 条真实 JD<br>不是硬凑 10 家投递</div></div>
+    <div class="stat"><div class="num">3</div><div class="label">评分分档<br>80+ 优先 / 70–79 待确认 / 以下不投</div></div>
+    <div class="stat"><div class="num">1</div><div class="label">一个会话只发<br>一张定制简历</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">不编造、不重复<br>不打扰在谈会话</div></div>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="block-head"><h2 class="serif">先筛，再投。别用勤奋代替判断。</h2><span class="no">PRINCIPLES / 01</span></div>
+    <div class="principles">
+      <article class="p-card"><div class="k">门槛先于匹配</div><h3>硬性不符，直接跳过</h3><p>学历、届别、城市、出勤、日薪、远程/兼职，任一不满足就不进详情深核。不为凑数降标准。</p></article>
+      <article class="p-card"><div class="k">活跃先于数量</div><h3>蹲近三天还在线的 HR</h3><p>优先“今日活跃 / 刚刚活跃”，其次“3 日内活跃”。超过三天没动静的岗位，不把精力压在已读不回上。</p></article>
+      <article class="p-card"><div class="k">对话先于附件</div><h3>先文字，后简历</h3><p>招呼阶段不发图、不甩附件。等对方回复或明确要简历，再按该岗 JD 出一张；不发第二张。</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="block-head"><h2 class="serif">这套流程改了什么</h2><span class="no">BEFORE / AFTER</span></div>
+    <div class="compare">
+      <div>
+        <div class="tag">以前的投法</div>
+        <h3>看到差不多就打招呼</h3>
+        <ul>
+          <li>岗位多、方向散，靠数量碰运气</li>
+          <li>招呼后面紧跟简历，HR 还没回就先塞材料</li>
+          <li>同一家公司重复点、重复发</li>
+          <li>投完不记录，下次重新核对</li>
+        </ul>
+      </div>
+      <div>
+        <div class="tag">现在的投法</div>
+        <h3>先判断，再决定要不要开口</h3>
+        <ul>
+          <li>按方向配额筛，硬门槛先排除</li>
+          <li>只发三段文字；对方要材料再给一张</li>
+          <li>在谈会话不打扰，已发过的不重复</li>
+          <li>岗位、评分、反馈写进信息表，持续复用</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="block-head"><h2 class="serif">完整流程在二级页</h2><span class="no">READ THE SOP</span></div>
+    <div class="cta">
+      <div>
+        <h2 class="serif">从“找实习”到“发出那一张”</h2>
+        <p>完整版包含：十岗机制、评分表、招呼写法、回复后取 JD、定向简历、发送与跟进、简历红线。公开版不含手机号 / 微信 / 邮箱，也不含具体在谈公司。</p>
+      </div>
+      <div>
+        <a class="btn" href="boss-sop.html">进入 BOSS 完整 SOP <span class="arrow">→</span></a>
+        <a class="btn ghost" href="https://github.com/rainyland/job-hunting-sop">GitHub 仓库</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;width:100%">
+    <span>找实习 SOP · 公开版 · 2026-11-25</span>
+    <span>方法可以复用，个人信息不公开。</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BOSS 直聘投递 SOP · 公开版</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%2317365D'/%3E%3Cpath d='M7 8h10M7 12h10M7 16h6' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --navy:#17365D; --navy-2:#2A4E7E; --ink:#2B2F36; --sub:#64748B;
+    --line:#D9E0EA; --bg:#F5F7FA; --card:#FFFFFF; --soft:#EEF2F8;
+    --user:#E8EDF4; --user-ink:#33507A; --ok:#1F7A55; --warn:#B5651D;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;color:var(--ink);background:var(--bg);line-height:1.7}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:236px 1fr;gap:38px}
+
+  header.hero{background:var(--navy);color:#fff;padding:44px 0 36px;margin-bottom:32px}
+  .hero .wrap{grid-template-columns:1fr;gap:0}
+  .hero .kicker{font-size:13px;letter-spacing:.18em;color:#B9CBE2;margin-bottom:10px}
+  .hero h1{font-size:28px;font-weight:700;letter-spacing:.02em}
+  .hero p{margin-top:12px;color:#D6E0EE;font-size:15px;max-width:680px}
+  .hero .meta-row{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+  .hero .chip{font-size:12.5px;border:1px solid #3D5F8C;border-radius:20px;padding:3px 12px;color:#DCE7F4}
+
+  nav.toc{position:sticky;top:24px;align-self:start;padding-top:6px}
+  nav.toc h2{font-size:12px;color:var(--sub);letter-spacing:.12em;margin-bottom:14px;font-weight:600}
+  nav.toc a{display:block;text-decoration:none;color:var(--ink);font-size:14px;padding:7px 12px;border-left:2px solid var(--line);margin-bottom:2px}
+  nav.toc a:hover{color:var(--navy);border-left-color:var(--navy);background:var(--soft)}
+  nav.toc a .n{color:var(--sub);font-size:12px;margin-right:8px}
+
+  main{min-width:0;padding-bottom:60px}
+  section.stage{margin-bottom:40px}
+  .stage-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+  .stage-head .num{font-size:15px;font-weight:700;color:#fff;background:var(--navy);width:30px;height:30px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+  .stage-head h3{font-size:19px;color:var(--navy);font-weight:700}
+  .stage-head .sub{font-size:13px;color:var(--sub)}
+
+  ol.steps{list-style:none;display:flex;flex-direction:column;gap:12px}
+  ol.steps li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 18px;display:grid;grid-template-columns:34px 1fr;gap:14px}
+  ol.steps li .idx{font-size:13px;color:var(--sub);font-weight:600;padding-top:2px}
+  .step-body{min-width:0}
+  .step-body p{font-size:14.5px}
+  .step-body .subline{margin-top:6px;padding-top:6px;border-top:1px dashed var(--line)}
+  .tags{display:inline-flex;gap:6px;margin-left:8px;vertical-align:middle}
+  .tag{font-size:11.5px;padding:1px 9px;border-radius:20px;line-height:1.7}
+  .tag.assist{background:var(--navy);color:#fff}
+  .tag.user{background:var(--user);color:var(--user-ink)}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .col{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .col h4{font-size:15px;color:var(--navy);margin-bottom:10px}
+  .col p{font-size:13.5px}
+  .col.general{background:var(--soft);border-color:var(--soft)}
+
+  table.grid{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;table-layout:fixed}
+  table.grid th,table.grid td{padding:11px 14px;font-size:13.5px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  table.grid th{background:var(--soft);color:var(--navy);font-weight:600}
+  table.grid tr:last-child td{border-bottom:none}
+
+  .rules{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--navy);border-radius:12px;padding:18px 20px}
+  .rules ul{list-style:none;display:grid;gap:10px}
+  .rules li{font-size:14px;padding-left:20px;position:relative}
+  .rules li::before{content:"";position:absolute;left:2px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--navy)}
+
+  .note{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-top:12px}
+  .note h4{font-size:15px;color:var(--navy);margin-bottom:10px}
+  .note ul{list-style:none;display:grid;gap:8px}
+  .note li{font-size:13.5px;padding-left:18px;position:relative}
+  .note li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--navy-2)}
+
+  .meta{background:var(--soft);border-radius:12px;padding:18px 20px;font-size:14px}
+  .meta p{margin-bottom:8px}
+  .meta strong{color:var(--navy)}
+  .status{font-size:12px;padding:1px 9px;border-radius:20px;white-space:nowrap}
+  .status.wait{background:#FDF3E7;color:var(--warn)}
+  .status.in{background:#EAF4EF;color:var(--ok)}
+
+  @media (max-width:860px){
+    .wrap{grid-template-columns:1fr;gap:20px}
+    nav.toc{position:static}
+    .grid3{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">AI 协作实验 · BOSS 投递流程 · 公开版</div>
+    <h1>BOSS 直聘求职实操 SOP</h1>
+    <p>记录我怎样把 AI 训练成 BOSS 投递搭子：筛岗、打招呼、对方回复后只发一张定制简历、跟进复盘。公开版隐去联系方式与具体在谈公司，只保留方法。</p>
+    <div class="meta-row">
+      <span class="chip">产品 / 实施方向优先</span>
+      <span class="chip">武汉线下日常实习</span>
+      <span class="chip">日薪 ≥120 元 · 优先 150+</span>
+      <span class="chip">100 分制 · 80+ 才投</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc">
+    <h2>流程目录</h2>
+    <a href="#stage-01"><span class="n">01</span>发起方式</a>
+    <a href="#stage-02"><span class="n">02</span>十岗筛选机制</a>
+    <a href="#stage-03"><span class="n">03</span>在线简历维护</a>
+    <a href="#stage-04"><span class="n">04</span>找岗与打招呼</a>
+    <a href="#stage-05"><span class="n">05</span>回复后取材料</a>
+    <a href="#stage-06"><span class="n">06</span>做定向简历</a>
+    <a href="#stage-07"><span class="n">07</span>传附件与发送</a>
+    <a href="#stage-08"><span class="n">08</span>到岗安排口径</a>
+    <a href="#stage-09"><span class="n">09</span>跟进与面试</a>
+    <a href="#stage-10"><span class="n">10</span>简历红线</a>
+    
+    
+  </nav>
+
+  <main>
+    <div class="note" style="margin-bottom:26px">
+      <h4>公开版说明</h4>
+      <ul>
+        <li>本页只保留流程与方法，不含手机号、微信、邮箱等联系方式。</li>
+        <li>不列具体在谈公司、HR 姓名与个人投递进度；这些留在本地信息表。</li>
+        <li>核心原则：打招呼只发文字；对方回复或明确要简历后，再发一张按 JD 定制的截图。</li>
+      </ul>
+    </div>
+
+
+    <!-- 01 发起方式 -->
+    <section class="stage" id="stage-01">
+      <div class="stage-head">
+        <span class="num">01</span>
+        <div><h3>发起方式：手动，不开定时任务</h3><div class="sub">已停用每日自动扫岗；开机在线后口头发起</div></div>
+      </div>
+      <ol class="steps">
+        <li><span class="idx">01</span><div class="step-body"><p>不设自动定时扫岗。你打开笔记本、Doubao 在线后跟我说一声「找实习」，我再按十岗机制手动扫描筛选。<span class="tags"><span class="tag user">用户发起</span><span class="tag assist">助手执行</span></span></p></div></li>
+        <li><span class="idx">02</span><div class="step-body"><p>运行前提：本地浏览器已登录 BOSS 直聘。若登录态过期，我会停下通知你接管登录，不在未登录状态下反复重试。<span class="tags"><span class="tag assist">助手检查</span></span></p></div></li>
+        <li><span class="idx">03</span><div class="step-body"><p>主渠道 BOSS 直聘，实习僧仅作补充，不分散精力。<span class="tags"><span class="tag assist">助手</span></span></p></div></li>
+      </ol>
+    </section>
+
+    <!-- 02 十岗机制 -->
+    <section class="stage" id="stage-02">
+      <div class="stage-head">
+        <span class="num">02</span>
+        <div><h3>十岗筛选机制与数据库沉淀</h3><div class="sub">10 是分析目标，不是必须投 10 家；不为凑数降标准</div></div>
+      </div>
+      <ol class="steps">
+        <li><span class="idx">04</span><div class="step-body"><p>四步流程：先拉候选不急着投 → 逐个分析 JD 与条件 → 按档位决定是否打招呼 → 记录招聘反馈，据此持续优化简历。<span class="tags"><span class="tag assist">助手</span></span></p></div></li>
+      </ol>
+
+      <table class="grid" style="margin-top:12px">
+        <colgroup><col style="width:34%"><col style="width:16%"><col style="width:50%"></colgroup>
+        <thead><tr><th>方向配额</th><th>数量</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>AI 产品 / AI 产品运营</td><td>3</td><td>带产品或数据实操的运营可看，纯拉新投放 / 剪辑不投</td></tr>
+          <tr><td>软件实施 / ERP 实施</td><td>3</td><td>交付、配置、需求对接、文档类</td></tr>
+          <tr><td>软件测试 / 数据运营</td><td>2</td><td>黑盒功能测试、基础数据整理可沾边</td></tr>
+          <tr><td>其他匹配</td><td>2</td><td>技术文档、项目助理、需求分析等</td></tr>
+        </tbody>
+      </table>
+
+      <div class="grid3" style="margin-top:14px">
+        <div class="col"><h4>80 分以上 · 优先投</h4><p>达标岗按授权可直接发三段式招呼；硬门槛全部满足。</p></div>
+        <div class="col"><h4>70–79 分 · 待确认</h4><p>只出评分和招呼草稿，你确认后再发，不自动投递。</p></div>
+        <div class="col general"><h4>70 分以下 · 不投</h4><p>原则上不投；除非有特殊成长价值或你单独拍板。</p></div>
+      </div>
+
+      <div class="note">
+        <h4>求职数据库（本地 Excel）</h4>
+        <ul>
+          <li><strong>岗位库</strong>：每个核对过的岗位一行——方向、公司、岗位、薪资出勤、学历专业硬技能、匹配优势、短板、评分、档位、结论、反馈状态、会话对象、链接。</li>
+          <li><strong>每日筛选记录</strong>：当日各方向筛选数、合计、投递数、反馈进展备注。</li>
+          <li><strong>评分与状态口径</strong>：档位规则、硬门槛、反馈状态枚举、方向配额。</li>
+          <li>已在谈、已投、已排除岗位全部进库并标注原因，避免重复核对；会话有新回复时回写状态。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 03 在线简历 -->
+    <section class="stage" id="stage-03">
+      <div class="stage-head">
+        <span class="num">03</span>
+        <div><h3>在线简历维护（表单版）</h3><div class="sub">在线表单简历与附件定向 PDF 是两套独立材料，分开维护、不混改</div></div>
+      </div>
+      <ol class="steps">
+        <li><span class="idx">05</span><div class="step-body"><p>两套材料分工：在线表单简历是通用底稿，长期保持合规、完整；附件定向稿按单个岗位另外出。定向稿不照搬进在线简历，在线简历也不替代定向稿。<span class="tags"><span class="tag assist">助手</span></span></p></div></li>
+        <li><span class="idx">06</span><div class="step-body"><p>模块结构：个人信息、个人优势、期望职位、工作 / 实习经历、项目经历、教育经历、资格证书、社团 / 组织经历、志愿者经历、专业技能。<span class="tags"><span class="tag assist">助手</span></span></p></div></li>
+      </ol>
+      <div class="note">
+        <h4>平台操作限制（踩过的坑）</h4>
+        <ul>
+          <li>资格证书只支持输入名称 + 回车自定义添加，无级别 / 时间字段；名称 ≤20 字；清单最后必须点「确定」才保存，中途离开条目会丢。</li>
+          <li>行业、职位、起止时间、课程标签、时长数量 / 周期都从弹层下拉选，不能直接打字。</li>
+          <li>附件文件控件受控，脚本无法自动选文件，须本人手动选择上传。</li>
+          <li>离屏链接先滚动到可视区再点击；编辑表单必须点「完成 / 确定」保存，未保存退出点「确定」即放弃改动。</li>
+          <li>平台「附件内容更丰富，建议同步在线简历」是通用诊断提示，两份定向稿不据此照搬。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 04 找岗打招呼 -->
+    <section class="stage" id="stage-04">
+      <div class="stage-head">
+        <span class="num">04</span>
+        <div><h3>找岗与打招呼</h3><div class="sub">初筛门槛达标后，再发文字招呼</div></div>
+      </div>
+      <ol class="steps">
+        <li><span class="idx">07</span><div class="step-body"><p>扫量岗位：按方向配额拉候选；优先近三天活跃 HR；线下到岗全职日常实习、产品 / 实施优先、日薪 ≥120（优先 150+）、2029 届、100 分制 80+ 才保留。放宽到 ≥120 / 天需你单独同意。<span class="tags"><span class="tag assist">助手</span></span></p></div></li>
+        <li><span class="idx">08</span><div class="step-body"><p>逐条进详情核对：岗位职责、任职要求、加分项、薪资、城市、出勤（几天 / 周、几个月）、公司规模与背景；JD 没写出勤天数 / 月数的，记下来沟通时确认。<span class="tags"><span class="tag assist">助手</span></span></p></div></li>
+        <li><span class="idx">09</span><div class="step-body"><p>对标判断：列出匹配优势和主要短板；硬性不符（届别、专业、经验、硬技能、出勤）直接放弃，「优先」项可沾边但不硬蹭不会的技能；沾边但有硬伤的归边缘备选，标注清楚、不勉强投。<span class="tags"><span class="tag assist">助手</span></span></p></div></li>
+        <li><span class="idx">10</span><div class="step-body"><p>打招呼草稿：三段式——岗位匹配 + 到岗安排 + 愿从基础做起，按该岗 JD 单独写，不套模板。<span class="tags"><span class="tag assist">助手</span></span></p></div></li>
+        <li><span class="idx">11</span><div class="step-body">
+          <p>发送招呼（两种模式）：</p>
+          <div class="subline"><p><strong>默认人工确认</strong>：草稿出给你，确认后本人在会话发文字；先不发简历、不紧接着甩图片。<span class="tags"><span class="tag user">用户</span></span></p></div>
+          <div class="subline"><p><strong>授权自动模式</strong>：你明确授权后，对 80+ 达标岗直接发三段式招呼；已在谈的会话不打扰、不重复发。<span class="tags"><span class="tag assist">助手</span></span></p></div>
+        </div></li>
+      </ol>
+      <div class="note">
+        <h4>硬门槛（不符直接排除，不进详情深核）</h4>
+        <ul>
+          <li>学历只投本科及以上，大专 / 中专 / 高中及以下一律排除。</li>
+          <li>限 2025 / 2026 / 2027 / 2028 届、明确要社招工作经验的，排除。</li>
+          <li>专业或硬技能卡死（熟练前端 / 代码、Python / Java、Axure / 墨刀原型工具、CAD 等本人不会的），排除。</li>
+          <li>排除远程 / 线上岗、兼职、日结周结小时工、剪辑后期、纯行政前台、纯档案单据录入；纯运营岗尽量不投。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 05 回复取材料 -->
+    <section class="stage" id="stage-05">
+      <div class="stage-head">
+        <span class="num">05</span>
+        <div><h3>对方回复后取材料</h3><div class="sub">聊天记录 + 职位 JD + 公司信息，汇总成评估材料</div></div>
+      </div>
+      <ol class="steps">
+        <li><span class="idx">12</span><div class="step-body"><p>读聊天记录：进在谈会话，提取双方全部消息原文、时间、已读 / 送达状态。<span class="tags"><span class="tag assist">助手</span></span></p></div></li>
+        <li><span class="idx">13</span><div class="step-body"><p>提职位 JD：点「查看职位」进详情，提取完整 JD、公司工商信息、福利、工作地址。<span class="tags"><span class="tag assist">助手</span></span></p></div></li>
+        <li><span class="idx">14</span><div class="step-body"><p>汇总材料：聊天记录原文 + JD 原文 + 公司信息 + 对标优势 / 短板，整理成一份文档供判断下一步。<span class="tags"><span class="tag assist">助手</span></span></p></div></li>
+      </ol>
+    </section>
+
+    <!-- 06 定向简历 -->
+    <section class="stage" id="stage-06">
+      <div class="stage-head">
+        <span class="num">06</span>
+        <div><h3>做定向简历</h3><div class="sub">同一份真实经历底稿，按岗位调整表达</div></div>
+      </div>
+      <ol class="steps">
+        <li><span class="idx">15</span><div class="step-body"><p>修改口径：你给出硬性口径（网站项目独立完成、不放原型工具、不提豆包、不写台账、时长怎么说、网站栏目以课程最终要求为准）。<span class="tags"><span class="tag user">用户</span></span></p></div></li>
+        <li><span class="idx">16</span><div class="step-body"><p>改定向稿：在同一份真实经历底稿上调整求职意向、经历侧重和技能对齐；不新增没做过的项目，不虚构能力。<span class="tags"><span class="tag assist">助手</span></span></p></div></li>
+        <li><span class="idx">17</span><div class="step-body"><p>红线核对：全文「豆包」0 次、「台账」0 次；不会的技能整条不写；不写自曝短板句；隐私不进简历；排名不靠前不硬填。<span class="tags"><span class="tag assist">助手</span></span></p></div></li>
+        <li><span class="idx">18</span><div class="step-body"><p>排版出稿：控制一页内，不靠缩字号硬塞，超出就精简条目；导出 PDF 便于 HR 打印，再渲染一页 PNG 截图。<span class="tags"><span class="tag assist">助手</span></span></p></div></li>
+        <li><span class="idx">19</span><div class="step-body"><p>定稿确认：核对内容与口径，确认后再上传、发送；通用版不直接投。<span class="tags"><span class="tag user">用户</span></span></p></div></li>
+      </ol>
+    </section>
+
+    <!-- 07 传附件发送 -->
+    <section class="stage" id="stage-07">
+      <div class="stage-head">
+        <span class="num">07</span>
+        <div><h3>传附件与发送简历</h3><div class="sub">先传附件库，再回会话发 PDF 与图片</div></div>
+      </div>
+      <ol class="steps">
+        <li><span class="idx">20</span><div class="step-body"><p>附件库腾位：附件上限 3 份；满额时列出旧稿，由你确认删哪份，再删。<span class="tags"><span class="tag assist">助手核对</span><span class="tag user">用户定删</span></span></p></div></li>
+        <li><span class="idx">21</span><div class="step-body"><p>上传附件简历：BOSS 文件控件受控，自动写入不生效；在简历页手动选定稿 PDF 上传，列表出现新一份即成功。<span class="tags"><span class="tag user">用户</span></span></p></div></li>
+        <li><span class="idx">22</span><div class="step-body"><p>发附件简历：只在对方明确要 PDF / 附件时发一份；发之前核对当前会话与岗位，别切错人。<span class="tags"><span class="tag user">用户</span></span></p></div></li>
+        <li><span class="idx">23</span><div class="step-body"><p>发图片简历：只在对方明确要截图时发一张 PNG；不要 PDF + PNG 连发，也不要补第二张。<span class="tags"><span class="tag user">用户</span></span></p></div></li>
+        <li><span class="idx">24</span><div class="step-body"><p>文字回复：一句感谢 + 定位 / 相关经历 + 到岗安排；确认后再发，不刷屏。<span class="tags"><span class="tag assist">助手出草稿</span><span class="tag user">用户发送</span></span></p></div></li>
+      </ol>
+      <div class="note">
+        <h4>简历归档</h4>
+        <ul>
+          <li>桌面「简历归档」文件夹，分产品、实施两类，每家公司一个子目录。</li>
+          <li>只放 PDF（附件简历）和 PNG（图片简历），不放 docx 源文件。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 08 到岗口径 -->
+    <section class="stage" id="stage-08">
+      <div class="stage-head">
+        <span class="num">08</span>
+        <div><h3>到岗安排口径</h3><div class="sub">按岗位所在地与要求选用，满足不了的如实说明</div></div>
+      </div>
+      <div class="grid3">
+        <div class="col"><h4>武汉本地岗</h4><p>寒假（1 月中旬—2 月中旬）可全职到岗；开学后每周可到岗 4 天，可连续实习 3 个月以上，可线下面试。</p></div>
+        <div class="col"><h4>外地岗（如深圳 / 上海）</h4><p>寒假可赴当地全职到岗；开学后需返校，长期到岗时间结合学校课程协调。</p></div>
+        <div class="col general"><h4>通用原则</h4><p>具体看岗位要求；岗位要求长期 / 连续月数而自己满足不了时，如实说明时间冲突，不硬承诺、不谎称能干满。</p></div>
+      </div>
+    </section>
+
+    <!-- 09 跟进面试 -->
+    <section class="stage" id="stage-09">
+      <div class="stage-head">
+        <span class="num">09</span>
+        <div><h3>跟进与面试</h3><div class="sub">盯状态，关键词准备，不背稿</div></div>
+      </div>
+      <ol class="steps">
+        <li><span class="idx">25</span><div class="step-body"><p>跟进：查看已读 / 送达与对方回复；有新消息及时提取并回写数据库。<span class="tags"><span class="tag assist">助手盯状态</span></span></p></div></li>
+        <li><span class="idx">26</span><div class="step-body"><p>面试准备：不背稿，只记关键词、能自然口述；遇到语言 / 经验短板先如实说明水平，再争取面试机会，不提前自我淘汰。<span class="tags"><span class="tag assist">助手陪练</span></span></p></div></li>
+      </ol>
+    </section>
+
+    <!-- 10 红线 -->
+    <section class="stage" id="stage-10">
+      <div class="stage-head">
+        <span class="num">10</span>
+        <div><h3>简历红线（每份必查）</h3></div>
+      </div>
+      <div class="rules">
+        <ul>
+          <li>全文不提「豆包」，只写 AI / 生成式 AI。</li>
+          <li>不会的技能整条不写，原型工具、Axure、墨刀、Visio 一律不放。</li>
+          <li>不用「台账」，改用信息表 / 清单 / 记录表。</li>
+          <li>不写「没经验、不会、暂无实操」等自曝短板句。</li>
+          <li>商家信息表不写进简历；网站项目写明独立完成。</li>
+          <li>家庭经济情况、民族、政治面貌等隐私不进简历；排名不靠前不硬填。</li>
+          <li>附件简历控制一页内，不靠缩字号硬塞，超出就精简条目；导出 PDF 方便打印。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 11 固定信息 -->
+    
+
+    <!-- 12 在谈进度 -->
+    
+
+  </main>
+</div>
+
+
+<footer style="padding:28px 0 44px;color:#64748B;font-size:13px;text-align:center">
+  找实习 SOP · BOSS 渠道公开版 · 2026-11-25 · 方法可复用，个人信息不公开
+</footer>
+
+</body>
+</html>
